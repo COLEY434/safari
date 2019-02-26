@@ -12,6 +12,7 @@ class Counter extends Component {
         <br />
         <span>{this.state.count}</span>
         <button>Increments</button>
+        <h2>Welcome homw</h2>
       </React.Fragment>
     );
   }
