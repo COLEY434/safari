@@ -7,7 +7,8 @@ const movies = [
     genre: { id: "5fb2847djhdfkdfgfsjs", name: "Action" },
     numberInStock: 6,
     dailyRentalRate: 2.5,
-    publishDate: "2018-01-03T19:04:28"
+    publishDate: "2018-01-03T19:04:28",
+    liked: true
   },
 
   {
@@ -15,7 +16,8 @@ const movies = [
     title: "die Hard",
     genre: { id: "5fb2847djhdfkdfgfsjs", name: "Action" },
     numberInStock: 5,
-    dailyRentalRate: 2.5
+    dailyRentalRate: 2.5,
+    liked: false
   },
 
   {
@@ -23,7 +25,8 @@ const movies = [
     title: "Horrible bosses",
     genre: { id: "5fb2847djhdfkdfgfsjs", name: "Comedy" },
     numberInStock: 5,
-    dailyRentalRate: 2.5
+    dailyRentalRate: 2.5,
+    liked: false
   }
 ];
 
