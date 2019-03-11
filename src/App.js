@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-//import Movies from "./components/movies";
+import Movies from "./components/movies";
 import Navbar from "./components/navbar";
 import Counters from "./components/counters";
 
@@ -23,6 +23,17 @@ class App extends Component {
 
     this.setState({ counters });
   };
+
+  handleDecrement = counter => {
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counter);
+
+    counters[index] = { ...counter };
+    counters[index].value--;
+
+    this.setState({ counters });
+  };
+
   handleDelete = counterId => {
     const counters = this.state.counters.filter(x => x.id !== counterId);
     this.setState({ counters: counters });
@@ -48,7 +59,10 @@ class App extends Component {
             onDelete={this.handleDelete}
             onIncrement={this.handleIncrement}
             onReset={this.handleReset}
+            onDecrement={this.handleDecrement}
           />
+
+          <Movies />
         </main>
       </React.Fragment>
     );

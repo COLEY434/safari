@@ -17,28 +17,28 @@ class Counter extends Component {
   //     </ul>
   //   );
   // }
-  componentDidUpdate(prevProps, prevState) {
-    console.log("prevProps", prevProps);
-    console.log("prevState", prevState);
-  }
-  componentDidMount() {
-    console.log("Mounted oj");
-  }
 
   render() {
     let classes = "badge m-2 badge-";
     classes += this.props.counter.value === 0 ? "warning" : "primary";
     return (
-      <React.Fragment>
-        <div>
-          <span style={{ fontSize: 70 }} className={this.colorBadge()}>
-            {this.formatcount()}
-          </span>
+      <div className="row">
+        <div className="col-1">
+          <span className={this.colorBadge()}> {this.formatcount()} </span>
+        </div>
+        <div className="col">
           <button
             onClick={() => this.props.onIncrement(this.props.counter)}
             className="btn btn-secondary btn-sm"
           >
-            Increments
+            +
+          </button>
+          <button
+            disabled={this.props.counter.value === 0 ? "disabled" : ""}
+            onClick={() => this.props.onDecrement(this.props.counter)}
+            className="btn btn-secondary btn-sm m-2"
+          >
+            -
           </button>
           <button
             className="btn btn-sm btn-danger m-2"
@@ -47,7 +47,7 @@ class Counter extends Component {
             Delete
           </button>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
   colorBadge() {
